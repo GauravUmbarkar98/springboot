@@ -1,0 +1,21 @@
+Lab 01. Example 4
+=================
+
+In this example, we will test the working of detached objects. I am reusing the CD class that
+we created in the previous example, so all that you will find here is the CDTest class.
+If you see the content of this test class, you will find multiple @Test methods. I will request
+you to test each method one by one. So suppose if you want to run testCase1() method,
+just double click on the method name and then right-click and select the option to run the test.
+
+To understand the working of this example,
+1) In testCase1, i am using get() method to retrieve some CD information from the database
+	based on the primary key passed.
+2) In testCase2, i am using find() method which is the JPA equivalent for get method.
+3) testCase3 will help us in understanding the detached behavior of an Object.
+4) testCase4 can be used for understanding the difference between saveOrUpdate and merge method.
+	When running testCase4, try different options like
+	a) pass a CD object without the pk field initialized
+	b) pass a CD object with an existing row's pk assigned to it
+	c) pass a CD object with a non-existent pk
+	d) Test all these possibilities once with saveOrUpdate and once with merge. 
+	

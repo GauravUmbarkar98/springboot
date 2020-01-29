@@ -1,0 +1,287 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+create table CD (id integer not null, title varchar(255), artist varchar(255), purchase_date date, cost double, primary key (id))
+INSERT INTO CD VALUES(1,'Some Title','Some Artist','2013-08-17',9.99E0)
+COMMIT
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+create table persons (country varchar(255) not null, medicare_number integer not null, name varchar(255), age integer, primary key (country, medicare_number))
+INSERT INTO PERSONS VALUES('India',12345,'Majrul',99)
+COMMIT
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+create table customers_map (id integer not null, name varchar(255), email varchar(255), primary key (id))
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+create table books (id integer not null, isbn bigint not null, title varchar(255), author varchar(255), publication varchar(255), primary key (id))
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+INSERT INTO BOOKS VALUES(1,1234567890,'Beginning Hibernate','Jeff Linwood','Apress')
+COMMIT
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DELETE FROM BOOKS WHERE ID=1
+INSERT INTO BOOKS VALUES(1,1234567890,'Beginning Hibernate','Jeff Linwood','Wrox')
+COMMIT
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C11*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DELETE FROM BOOKS WHERE ID=1
+INSERT INTO BOOKS VALUES(1,1234567890,'Beginning Hibernate','Jeff Linwood','Wroxy')
+COMMIT
+DISCONNECT
+/*C12*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DELETE FROM BOOKS WHERE ID=1
+INSERT INTO BOOKS VALUES(1,1234567890,'Beginning Hibernate','Jeff Linwood','BPB')
+COMMIT
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C16*/SET SCHEMA PUBLIC
+alter table books drop constraint UK_kibbepcitr0a3cpk3rfr7nihn
+alter table books add constraint UK_kibbepcitr0a3cpk3rfr7nihn unique (isbn)
+DISCONNECT
+/*C17*/SET SCHEMA PUBLIC
+create table bids (bid_id integer not null, item_id integer not null, member_id integer not null, amount double default 0, primary key (bid_id))
+create table categories (category_id integer not null, parent_category_id integer, name varchar(255), primary key (category_id))
+create table categories_items (item_id integer not null, category_id integer not null, primary key (category_id, item_id))
+create table items (item_id integer not null, name varchar(255), description varchar(255), initialPrice double, reservePrice double, validTill date, primary key (item_id))
+create table members (member_id integer not null, name varchar(255), primary key (member_id))
+create table olditems (item_id integer not null, name varchar(255), expiredOn date, primary key (item_id))
+alter table bids add constraint FK_nbh5lpncfn8miok64pauyu1s6 foreign key (item_id) references items
+alter table bids add constraint FK_qlk0j45vr2ouknjurmkco05r2 foreign key (member_id) references members
+alter table categories add constraint FK_hfr9rd0rv1jv730afoi2n0qb7 foreign key (parent_category_id) references categories
+alter table categories_items add constraint FK_ffgai1p08wggdjqv7dq4ucgy9 foreign key (category_id) references categories
+alter table categories_items add constraint FK_pxxtlg5rb8it8ewp5lxhss3c5 foreign key (item_id) references items
+DISCONNECT
+/*C18*/SET SCHEMA PUBLIC
+create table entries (id integer not null, name varchar(255), phoneNumber integer, email varchar(255), phonebook_id integer, primary key (id))
+create table phonebook (id integer not null, name varchar(255), primary key (id))
+alter table entries add constraint FK_frr9darwly82svn8wc064kirt foreign key (phonebook_id) references phonebook
+INSERT INTO PHONEBOOK VALUES(1,'My PhoneBook')
+INSERT INTO ENTRIES VALUES(1,'Entry2',12345,'entry1@domain.com',NULL)
+INSERT INTO ENTRIES VALUES(2,'Entry5',12345,'entry1@domain.com',NULL)
+INSERT INTO ENTRIES VALUES(3,'Entry4',12345,'entry1@domain.com',NULL)
+INSERT INTO ENTRIES VALUES(4,'Entry1',12345,'entry1@domain.com',NULL)
+INSERT INTO ENTRIES VALUES(5,'Entry3',12345,'entry1@domain.com',NULL)
+DELETE FROM ENTRIES WHERE ID=1
+INSERT INTO ENTRIES VALUES(1,'Entry2',12345,'entry1@domain.com',1)
+DELETE FROM ENTRIES WHERE ID=2
+INSERT INTO ENTRIES VALUES(2,'Entry5',12345,'entry1@domain.com',1)
+DELETE FROM ENTRIES WHERE ID=3
+INSERT INTO ENTRIES VALUES(3,'Entry4',12345,'entry1@domain.com',1)
+DELETE FROM ENTRIES WHERE ID=4
+INSERT INTO ENTRIES VALUES(4,'Entry1',12345,'entry1@domain.com',1)
+DELETE FROM ENTRIES WHERE ID=5
+INSERT INTO ENTRIES VALUES(5,'Entry3',12345,'entry1@domain.com',1)
+COMMIT
+DISCONNECT
+/*C19*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C20*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C21*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C22*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C23*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C24*/SET SCHEMA PUBLIC
+DELETE FROM CD WHERE ID=1
+INSERT INTO CD VALUES(1,'Some Title','Some Artist','2013-08-17',99.0E0)
+COMMIT
+DISCONNECT
+/*C25*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C26*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C27*/SET SCHEMA PUBLIC
+DELETE FROM CD WHERE ID=1
+INSERT INTO CD VALUES(1,'Some Title','Some Artist','2013-08-17',99.0E0)
+COMMIT
+DISCONNECT
+/*C28*/SET SCHEMA PUBLIC
+DELETE FROM CD WHERE ID=1
+INSERT INTO CD VALUES(1,'Some Title','Some Artist','2013-08-17',99.0E0)
+COMMIT
+DISCONNECT
+/*C29*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C30*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C31*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C32*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C33*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C34*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C35*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C36*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C37*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C38*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C39*/SET SCHEMA PUBLIC
+create table developers (id integer generated by default as identity (start with 1), name varchar(255), onBench char(255), primary key (id))
+INSERT INTO DEVELOPERS VALUES(1,'Majrul','Y                                                                                                                                                                                                                                                              ')
+COMMIT
+DISCONNECT
+/*C40*/SET SCHEMA PUBLIC
+INSERT INTO DEVELOPERS VALUES(2,'Majrul','Y                                                                                                                                                                                                                                                              ')
+COMMIT
+DISCONNECT
+/*C41*/SET SCHEMA PUBLIC
+INSERT INTO DEVELOPERS VALUES(3,'Majrul','true                                                                                                                                                                                                                                                           ')
+COMMIT
+DISCONNECT
+/*C42*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C43*/SET SCHEMA PUBLIC
+create table products (id integer not null, version integer not null, name varchar(255), price double, primary key (id))
+INSERT INTO PRODUCTS VALUES(1,0,'Nokia Handset',100.0E0)
+COMMIT
+DISCONNECT
+/*C44*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,1,'Nokia Handset',110.0E0)
+COMMIT
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,2,'Nokia Handset',120.0E0)
+COMMIT
+DISCONNECT
+/*C45*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,3,'Nokia Handset',130.0E0)
+COMMIT
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,4,'Nokia Handset',140.0E0)
+COMMIT
+DISCONNECT
+/*C46*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,5,'Nokia Handset',150.0E0)
+COMMIT
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,6,'Nokia Handset',160.0E0)
+COMMIT
+DISCONNECT
+/*C47*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,7,'Nokia Handset',170.0E0)
+COMMIT
+DISCONNECT
+/*C48*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,8,'Nokia Handset',180.0E0)
+COMMIT
+DISCONNECT
+/*C50*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,9,'Nokia Handset',190.0E0)
+COMMIT
+/*C49*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C50*/DISCONNECT
+/*C52*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,10,'Nokia Handset',200.0E0)
+COMMIT
+DISCONNECT
+/*C51*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C53*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,11,'Nokia Handset',210.0E0)
+COMMIT
+DISCONNECT
+/*C54*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,12,'Nokia Handset',220.0E0)
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,13,'Nokia Handset',220.0E0)
+COMMIT
+DISCONNECT
+/*C55*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,14,'Nokia Handset',230.0E0)
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,15,'Nokia Handset',230.0E0)
+COMMIT
+DISCONNECT
+/*C56*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,16,'Nokia Handset',240.0E0)
+COMMIT
+DISCONNECT
+/*C58*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,17,'Nokia Handset',250.0E0)
+COMMIT
+DISCONNECT
+/*C57*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C60*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,18,'Nokia Handset',260.0E0)
+COMMIT
+DISCONNECT
+/*C59*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C61*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,19,'Nokia Handset',270.0E0)
+COMMIT
+/*C62*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,20,'Nokia Handset',280.0E0)
+COMMIT
+DISCONNECT
+/*C61*/DISCONNECT
+/*C63*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,21,'Nokia Handset',290.0E0)
+COMMIT
+/*C64*/SET SCHEMA PUBLIC
+DELETE FROM PRODUCTS WHERE ID=1
+INSERT INTO PRODUCTS VALUES(1,22,'Nokia Handset',300.0E0)
+COMMIT
+DISCONNECT
+/*C63*/DISCONNECT
+/*C65*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C66*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C67*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C68*/SET SCHEMA PUBLIC
+DISCONNECT

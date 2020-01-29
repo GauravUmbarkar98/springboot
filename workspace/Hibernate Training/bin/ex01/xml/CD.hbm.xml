@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="property">
+ 
+ 	
+ 
+   <class name="ex01.xml.CD" table="CD">
+  
+	   	<!-- 
+	   			id tag is used for mapping a primary key column of the table.
+	   			For composite primary key, we have composite id tag 
+	   	-->
+	    <id name="id" type="int">
+      	<column name="id" not-null="true" />
+      	  <!-- If we are going to assign the primary key on our own,
+      	  		either we can skip this element or we can provide the name
+      	  		of our own class which implements the IdentifierGenerator interface
+      	   -->
+         <generator class="increment"/>
+			<!--  
+			<generator class="sequence">
+				<param name="sequence">cd_seq</param>
+			</generator>
+			-->
+      </id>
+
+	<property name="title" >
+		<column name="cd_title"  length="20"/>
+	</property>
+	
+	<property name="artist" >
+		<column name="cd_artist" length="20"/>
+	</property>
+	
+	<property name="purchaseDate" type="date">
+		<column name="purchase_date" />
+	</property>
+	
+	<property name="cost" >
+		<column name="cd_cost" />
+	</property>
+	
+   </class>
+</hibernate-mapping>

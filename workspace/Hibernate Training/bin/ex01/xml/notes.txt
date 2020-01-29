@@ -1,0 +1,26 @@
+Lab 01. Example 1
+=================
+
+This will be our first example on Hibernate. As we will see, there are lot's of interesting
+features to learn in Hibernate and to begin with, it will be better if we start with a simple
+example. 
+
+Before you start running the examples, please get some database up and running. If you don't
+want to bother about any database, you can use HSQLDB which my example is already configured
+for. To start HSQLDB as a Server, please run the starthsqldb.bat from the "Common Settings"
+folder. Please run it from outside, since from inside eclipse if you run it, it will not work.
+IF suppose the database doesn't starts, then you need set the PATH before you run the script.
+
+To understand the working of this example,
+1) Start by reviewing the CD.java entity. Pretty straightforward, isn't it. Just a standard
+	POJO class with getters/setters and nothing else.
+2) Next step is the configuration of this entity that i have done in a file by the name
+	CD.hbm.xml. Please have a look at it.
+3) Next you will find the entry of the CD.hbm.xml file in the hibernate.cfg.xml file.
+4) For the examples to work, i have done most of the settings in a file by the name
+	hibernate.properties file in the "Common Settings" folder. So if you wish to use
+	a different database, you need to edit this file.
+5) Now let's see if your example is working. It's time to run the CDTest.java class to confirm 
+	the same. If there are no errors, then apart from the default log messages, you will see an 
+	insert query visible on the console as a confirmation of the same.
+	

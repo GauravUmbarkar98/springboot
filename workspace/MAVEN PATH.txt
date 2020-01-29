@@ -1,0 +1,247 @@
+
+
+Maven
+
+	- dependency
+
+	- reporting
+
+	- docs
+
+	- project management tool
+
+
+		pom
+		|
+		project object model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SET JAVA_HOME="C:\Program Files\Java\jdk1.7.0_79"
+
+SET M2_HOME="E:\Things I Love TO DO\workspace\apache-maven-3.3.9"
+
+SET PATH="C:\Program Files\Java\jdk1.7.0_79\bin;E:\Things I Love TO DO\workspace\apache-maven-3.3.9\BIN;%PATH%"
+
+
+c:\> mvn.cmd -version
+
+MKDIR MYAPP
+CD MYAPP
+
+
+C:\MYAPP> MVN.CMD ARCHETYPE:GENERATE	
+
+C:\MYAPP> MVN.CMD COMPILE
+
+C:\MYAPP> MVN.CMD PACKAGE
+
+
+GROUP ID IS SIMILAR TO PACKAGE
+
+ARTIFACT ID IS SIMILAR TO CLASS OR APPLICATION
+	MAVENTESTAPP <-- JAR OR WAR THAT WE ARE CREATING BY BUILDING AND DEPLOYING
+
+VERSION NUMBER 
+	1.0 
+
+PROPERTY PACKAGE
+
+CONFIRMATION
+
+
+
+maven ->	build lifecycle
+
+		
+		phases
+
+compile			test
+
+default:
+compile into the main directory
+test for the testing phase
+
+phases
+---------
+compile		->test	->package
+
+
+- validate (pom.xml/configuration/code in proper way)
+
+- compile phase
+
+- test (run the test cases)
+
+- package (.jar/.war/.ear)
+
+- install (package - the artifact - to the local
+maven repository )
+
+- if doesnt find in local repo, then it will
+	search in online repo
+
+- deploy ( it actually doesnt deploy on any app server)
+
+	- its ready to be downloaded for realtime use
+
+
+1. mvn.cmd compile
+
+2. mvn.cmd test
+
+3. mvn.cmd package
+
+4. mvn.cmd install
+
+java -cp  target\MavenTestApp-1.0-SNAPSHOT.jar org.vishal.quantum.App
+
+
+
+5. mvn.cmd clean  ( will remove all the generated class files )
+
+
+
+add dependency for the below line in App.java
+
+import org.slf4j.*;
+
+Logger logger = LoggerFactory.getLogger(App.class);
+	logger.info("hello world!");
+
+and then try to compile from the MavenTestApp folder
+
+
+
+google maven repository search to know dependency names 
+	mvnrepository.com
+
+	slfj api module
+
+	 <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-api</artifactId>
+         <version>1.6.1</version>
+        
+
+DEFAULT <scope> is compile
+
+	if scope is compile
+	means the jars are available during compile time
+
+  -----------------------------------------
+
+
+
+
+web app
+
+
+	mvn.cmd archetype:generate
+	1010 for web app
+
+
+mvn archetype:generate 
+-DgroupId=com.companyname.automobile  
+-DartifactId=trucks 
+-DarchetypeArtifactId=maven-archetype-webapp  
+-DinteractiveMode=false
+
+
+	groupid : com.vishal.myweb
+
+	artifactid : mywebapp
+
+	
+c:\> mvn.cmd package
+
+
+
+Profiles
+=============
+
+
+per project
+|
+pom.xml
+<profiles>
+      <profile>
+      <id>test</id>
+      <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+               <execution>
+                  <phase>test</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                  <tasks>
+                     <echo>Using env.test.properties</echo>
+            <copy file="src/main/resources/env.test.properties" tofile
+		    ="${project.build.outputDirectory}/env.properties"/>
+                  </tasks>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+      </build>
+      </profile>
+   </profiles>
+
+per user
+|
+/userhome/.m2/settings.xml
+
+|
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/settings-1.0.0.xsd">
+   <mirrors>
+      <mirror>
+         <id>maven.dev.snaponglobal.com</id>
+         <name>Internal Artifactory Maven repository</name>
+         <url>http://repo1.maven.org/maven2/</url>
+         <mirrorOf>*</mirrorOf>
+      </mirror>
+   </mirrors>
+   <activeProfiles>
+      <activeProfile>test</activeProfile>
+   </activeProfiles>
+</settings>
+
+
+
+mvn test -Ptest
+
+mvn test -Pprod
+
+

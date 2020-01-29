@@ -1,0 +1,22 @@
+package util;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		
+	}
+}
+interface Animal
+{
+	
+}
+
+/*
+class FarmHouse
+{
+	Animal grow()
+	{
+		System.out.println("growing....");
+	}
+}*/

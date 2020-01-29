@@ -1,0 +1,25 @@
+<ehcache>
+
+	<diskStore path="java.io.tmpdir" />
+	
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToLiveSeconds="120"
+		overflowToDisk="true"
+		timeToIdleSeconds="60"
+	/>
+	
+	<cache name="allflights"
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToLiveSeconds="300"
+	/>
+
+	<cache name="carrierflights"
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToLiveSeconds="300"
+	/>
+
+</ehcache>

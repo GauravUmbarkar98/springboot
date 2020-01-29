@@ -1,0 +1,66 @@
+import java.util.Date;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import com.vishal.dto.UserDetails;
+
+public class HibernateTest {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = new Configuration().
+				configure().buildSessionFactory(); // hibernate.cfg.xml
+		
+				Session session = sessionFactory.openSession();
+				
+				UserDetails user1 = new UserDetails();
+				user1.setAddress("Hissar");	user1.setUserName("Kushager");
+				user1.setDescription("DBA");	user1.setJoinedDate(new Date());
+				
+				session.beginTransaction();
+				
+				session.save(user1);// fires the insert query
+				System.out.println("user object persisted...");
+				
+				session.getTransaction().commit();
+				System.out.println("session : "+session.hashCode());
+				session.close();
+				System.out.println("session closed...");
+				user1 = null;
+				
+				session = sessionFactory.openSession();
+				System.out.println("session reopened......");
+				System.out.println("session : "+session.hashCode());
+				session.beginTransaction();
+				UserDetails x = (UserDetails) session.get(UserDetails.class,1); //HQL
+				UserDetails y = (UserDetails) session.get(UserDetails.class,2);
+				System.out.println("object is "+x);
+				System.out.println("object is "+y);
+			
+				
+				/*System.out.println(user1.getUserId());
+				System.out.println(user1.getUserName());
+				System.out.println(user1.getAddress());
+				System.out.println(user1.getJoinedDate());
+				System.out.println(user1.getDescription());
+			*/
+				
+				x.setAddress("Ambarnath");
+				y.setAddress("Kandiwali");
+				
+				session.update(x);
+				session.update(y);
+				
+				session.getTransaction().commit();
+				session.close();
+				
+				
+				session = sessionFactory.openSession();
+				session.beginTransaction();
+				System.out.println("deleting object...");
+				
+				session.delete(x);
+				System.out.println("deleted...");
+				session.getTransaction().commit();
+				session.close();
+				
+	}
+}

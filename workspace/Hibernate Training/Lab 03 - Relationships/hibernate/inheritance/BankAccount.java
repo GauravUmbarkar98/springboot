@@ -1,0 +1,21 @@
+package hibernate.inheritance;
+
+public class BankAccount extends BillingDetails {
+
+	private String bankName;
+	
+	public String getBankName() {
+		return bankName;
+	}
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+	@Override
+	public String toString() {
+		return "BankAccount [bankName=" + bankName + ", toString()="
+				+ super.toString() + "]";
+	}
+	
+	
+	
+}

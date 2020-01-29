@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;db-config.xml&apos; to &apos;Lab 02 - Spring IoC/src/ex3&apos;&#x0A;- Original project: &apos;Lab 01 - Spring Intro&apos;&#x0A;- Destination element: &apos;Lab 02 - Spring IoC/src/ex3&apos;&#x0A;- Original element: &apos;db-config.xml&apos;" description="Copy file" destination="=Lab 02 - Spring IoC/src&lt;ex3" element1="src/db-config.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1428732627719" units="0" version="1.0"/>
+</session>

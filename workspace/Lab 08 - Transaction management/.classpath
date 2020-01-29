@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/common-dependencies/junit-4.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/hibernate3.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-jars/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-dependencies/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/hibernate-dependencies/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/common-dependencies/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/common-dependencies/hsqldb.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-aop-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-beans-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-context-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-core-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-expression-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-jdbc-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-orm-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-test-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-tx-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

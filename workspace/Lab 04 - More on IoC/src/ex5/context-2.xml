@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Beans defined in this xml will act as child context beans -->
+
+	<bean id="currencyService" class="ex5.CurrencyService">
+		<property name="exchangeService" ref="exchangeService" />
+		<!-- 
+			<property name="exchangeService">
+				<ref parent="exchangeService" />
+			</property>
+		 -->
+	</bean>	
+
+</beans>

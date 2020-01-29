@@ -1,0 +1,39 @@
+package util;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		Animal a = new Cow();
+		a.walk();
+		int sum = a.add(10, 20);
+		
+		System.out.println("sum "+sum);
+	}
+}
+
+abstract class Animal
+{
+	abstract void walk(); //IMPLEMENTATION : walk() its mandatorily defined by the nonabstract child
+	
+	Animal add(int i, int j) { //DERIVATION : derived by the child, and teh child may override
+		return i+j;
+	}
+}
+
+class Cow extends Animal
+{
+	public void walk() {
+		System.out.println("walking....cow");
+	}
+	
+}
+
+/*
+class FarmHouse
+{
+	Animal grow()
+	{
+		System.out.println("growing....");
+	}
+}*/

@@ -1,0 +1,57 @@
+version: 1
+
+dn: ou=groups,dc=training,dc=org
+objectclass: top
+objectclass: organizationalUnit
+objectClass: extensibleObject
+ou: groups
+
+dn: o=training
+objectClass: organization
+objectClass: extensibleObject
+objectClass: top
+o: training
+
+dn: ou=users,o=training
+objectClass: extensibleObject
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=groups,o=training
+objectClass: extensibleObject
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=User,ou=groups,o=training
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: User
+uniqueMember: cn=Majrul Ansari,ou=users,o=training
+
+dn: cn=Admin,ou=groups,o=training
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Admin
+uniqueMember: cn=John Travolta,ou=users,o=training
+
+dn: cn=Majrul Ansari,ou=users,o=training
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: Majrul Ansari
+sn: Ansari
+uid: majrul
+userPassword:: cGFzcw==
+
+dn: cn=John Travolta,ou=users,o=training
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: John Travolta
+sn: Travolta
+uid: john
+userPassword:: cGFzcw==

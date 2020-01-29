@@ -1,0 +1,21 @@
+package util;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		FarmHouse f = new FarmHouse();
+		f.grow();
+		
+	}
+}
+interface Animal
+{
+	
+}
+class FarmHouse
+{
+	void grow()
+	{
+		System.out.println("growing....");
+	}
+}

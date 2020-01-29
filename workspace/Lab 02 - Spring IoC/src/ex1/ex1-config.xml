@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<!--  Please edit the DataSource configuration in db-config.xml file if required -->
+	<import resource="db-config.xml" />
+
+	<!--  TODO 1: Refer slide no. 41 to correctly set the parent/child relationship -->
+	<bean id="baseRepo" class="ex1.BaseRepository" abstract="true">
+		<property name="dataSource" ref="ds" />
+	</bean>
+	
+	<!--  TODO 1: Refer slide no. 41 to correctly set the parent/child relationship -->
+	<bean id="flightRepo" class="ex1.FlightRepositoryImpl" parent="baseRepo" />
+
+	<!-- This is to test the annotated version for the same example  -->
+	<context:component-scan base-package="ex1" />	  	
+
+</beans>
+

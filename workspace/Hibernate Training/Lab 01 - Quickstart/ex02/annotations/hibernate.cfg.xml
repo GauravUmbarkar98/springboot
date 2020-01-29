@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory> 
+
+		<!-- 
+			Instead of providing the name of .hbm.xml, Hibernate
+			also supports annotated entities. So we are using
+			JPA annotations for the mapping, but still using the
+			Hibernate API for persistence operations
+		 -->
+		<mapping class="ex02.annotations.CD" />
+
+	</session-factory>
+
+</hibernate-configuration>
+ 

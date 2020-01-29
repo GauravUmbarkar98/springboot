@@ -1,0 +1,26 @@
+h1. Lab 7 - Spring Hibernate Integration
+
+h1. Introduction
+
+In this lab we will spend time integrating Hibernate along with Spring. Also we will see Spring's support for JPA which is a standard API for working with ORMs like Hibernate and Toplink. Spring provides helper classes which deal with the issues which are mostly handled by developers. So even in case of Hibernate support, it's the same intention. Like we saw JdbcTemplate which simplifies JDBC access, we have a similar template API for Hibernate and JPA as well.
+
+h1. Exercise 1. Spring Hibernate example
+
+It's important that you take this lab seriously since Hibernate is widely used nowadays and Spring+Hibernate in combination is what every project deals with. We will have a look at different ways of writing a Repository class in Spring. Also read the comments which i've kept in the source code as a quicknote on the same.
+
+Start by reviewing @HibernateProductRepository@ , class  from the @ex1@ package. Review the other classes and configuration files as well. Test the code as usual. 
+
+Whatever additional transaction related settings and code you see, we will discuss the working of the same in the next Lab.
+
+h1. Exercise 2. Spring JPA example
+
+JPA is just an abstraction over the ORM API. So instead of using Hibernate API directly in our code, we use  JPA so that our code is loosely coupled with an ORM.
+
+Review all the classes and configuration files in @ex2@ package one by one. The repository class using JPA is @JpaProductRepository@. You will see some additional transactional configuration, but you can ignore that for the time being as we will be discussing  the same in our next session. 
+
+Test the code as usual and see if everything is okay.
+
+h1. Conclusion
+
+With this lab now, we have concluded with Spring's support for Data access. We saw how Spring can be used to simplify Hibernate code and also we evaluated Spring's support for JPA as well. So we are now moving ahead to the next very important feature provided Spring, i.e. Transaction management. In our next  session, we will discuss more about transactional capabilities of Spring.
+

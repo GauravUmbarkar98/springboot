@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FirstHibernateProject/src/com/vishal/dto/CD.hbm.xml&apos; to &apos;UserDetails.hbm.xml&apos;" description="Rename resource &apos;CD.hbm.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/vishal/dto/CD.hbm.xml" name="UserDetails.hbm.xml" stamp="1459151375282" updateReferences="true"/>
+</session>

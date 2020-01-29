@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+#mylabel1 {
+	background-color: blue;
+}
+
+#mylabel2 {
+	background-color: green;
+}
+p.abc {
+	color:red;
+}
+
+.myinput {
+	background-color: orange; 
+	border: medium;
+}
+
+.mybutton {
+	background-color: cyan;
+	
+}

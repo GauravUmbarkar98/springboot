@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="db-config.xml" />
+
+	<!--  TODO 9: Identify the correct xml attribute to inform the container 
+	to use autowiring by referring to slide no. 31 -->
+	<bean id="flightRepo" class="xml.FlightRepositoryImpl3" autowire="byType"/>
+	
+</beans>
+
+
+
+
+

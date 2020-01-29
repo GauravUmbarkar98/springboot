@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="serviceLocator" class="ex3.MyServiceLocator" />
+	
+	<!-- TODO 3: Complete the configuration by referring to slide no. 46 -->
+	
+	<import resource="db-config.xml" />
+	
+	<bean id="myService" factory-bean="serviceLocator" factory-method="createMyService" >
+			<!-- <constructor-arg ref="ds"/> -->
+			<constructor-arg value="vishal dawane"/> 
+	</bean>
+	
+</beans>
+

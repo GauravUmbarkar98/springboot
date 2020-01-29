@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory> 
+			 
+		<mapping resource="ex01/xml/CD.hbm.xml" />
+
+		<!-- Will not work from Hibernate 4.x onwards -->
+		<event type="load">
+            <listener class="example.CustomListener" />
+        </event>
+		<event type="flush">
+            <listener class="example.CustomListener" />
+        </event>
+
+	</session-factory>
+
+</hibernate-configuration>
+ 

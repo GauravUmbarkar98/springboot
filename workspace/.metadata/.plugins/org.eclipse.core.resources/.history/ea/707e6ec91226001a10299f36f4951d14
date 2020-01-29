@@ -1,0 +1,71 @@
+package util;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		SessionFactory sessionFactory = new Configuration().
+				configure().buildSessionFactory(); // hibernate.cfg.xml
+		
+		Animal a = new Mammal().getAnimal("wild").walk();
+		
+				
+		
+	}
+}
+
+abstract class Animal
+{
+	abstract Animal walk(); //IMPLEMENTATION : walk() its mandatorily defined by the nonabstract child
+	
+	Animal getAnimal(String animalType) { //DERIVATION : derived by the child, and teh child may override
+		Animal a = null;
+		if(animalType.equalsIgnoreCase("domestic"))
+			a = new Cow();
+		else if(animalType.equalsIgnoreCase("wild"))
+			a = new Tiger();
+		return a;
+	}
+}
+
+class Mammal extends Animal
+{
+	public Animal walk() {
+		System.out.println("walking...mammal");
+		return this;
+	}
+
+}
+class Cow extends Mammal
+{
+	public Animal walk() {
+		System.out.println("walking...cow ");
+	}
+
+	void eatingGrass() {
+		System.out.println("Cow eating grass");
+	}
+}
+class Tiger extends Mammal
+{
+	public Animal walk() {
+		System.out.println("walking...tiger");
+	}
+
+	void eatingFlesh() {
+		System.out.println("Tiger eating flesh");
+	}
+}
+
+
+/*
+class FarmHouse
+{
+	Animal grow()
+	{
+		System.out.println("growing....");
+	}
+}*/

@@ -1,0 +1,76 @@
+h1. Lab 3. New features of Spring 3.x and 4.x
+
+h2. Spring 3.0 enhancements
+
+The first thing we will do is check out some of the new features introduced in Spring 3.x
+
+h3. Using EL in xml configuration
+
+Expressions, _#{expr}_ can now be used throughout the framework now from 3.0 onwards. It's the easiest way possible now for setting bean properties wherever possible.
+
+We will do a small example in which we will try to read some system propertie using EL. Start by reviewing @ErrorHandler@ class from @ex1@ package. According the code, we need to initialize the _defaultLocale_ property. Open @ex1-config-1.xml@ file and complete @TODO 1@ by referring to **slide no. 77** to use EL for initializing the _defaultLocale_.
+
+Run the @ErrorHandlerTest@ class to test whether EL is working or not.
+
+h3. Using EL via annotations
+
+We need to use _@Value_ annotation to initialize bean properties using EL. The advantage of this annotation is also the same as other annotations, it can be used at the field level directly. Open @ErrorHandler2@ class and complete @TODO 2@ by referring to **slide no. 78**. 
+
+Run @ErrorHandlerTest2@ to see if @Value annotation is working or not.
+
+Also try out using Elvis/Ternary operator when using EL as seen on **slide no. 79**.
+
+h3. Using EL to access property value of another bean
+
+As you can see on **slide no. 80**, we can use EL to read/get the properties of other beans. Create your own Java classes to try this out. Also using EL, we can invoke any method of other beans & pass parameters, if time permits, do try this as well. 
+
+h3. Collection selection and projection
+
+As discussed on **slide no. 81-82**, review the @ProductList@ class from @ex1@ package. @ProductListTest@ class contains the code to test this feature.
+
+h2. New features of Spring 3.1
+
+h3. Bean Profiles
+
+**Slide no. 83** explains the concept of Bean definition profiles. Now it's easy to group set of beans under a common name. All what we need to do is specify the profile name when launching the application either by setting a system property or as a context-param in web.xml file. @ex2-config-1.xml@ contains the configuration for this example. To test the same, please run @FlightRepositoryTest@ class from the @ex2@ package.
+
+h3. Caching
+
+One more new feature of Spring is support for Caching. Any POJO method which returns an Object can be cached. You can start by reviewing @FlightRepositoryImpl@ from @ex3@ package. Next we need to setup the cache provider, for which the configuration can be found in @ex3-config-1.xml@ file. Finally, you can test the working of this example by running the @FlightRepositoryTest@ class from the same package. Refer **slide no. 85 - 88** if required.
+
+h2. Spring 3.0 Annotation based container configuration
+
+Refer to **slide no. 89-91** for details.
+
+This is one of the interesting features of Spring 3.0. The concept of xml been replaced by annotations completely. Start by reviewing @AppConfig@ class from @ex4@ package carefully and see if you are clear with the intent of this code. Also review the other dependent classes as well.
+
+Open @AppConfigTest@ class and see how this time we created an ApplicationContext instance without supplying any xml. Refer to **slide no. 106** for details. Run the test class and see if you are clear with the working of the same.
+
+Please see to it that you are very clear with what's the difference this time. Plese let me know in case of any difficulty.
+
+h2. Core Spring 4.0 improvements
+
+Spring 4 has introduced lot's of improvement at the core IoC/DI level. Apart from this areas like MVC, Caching & JMS has
+also been improved, but that is not the intention of this lab right now.  
+
+h3. Condition API
+
+To understand this feature, please refer to **slide no. 93.95** for details. Also i have shared a **README.txt** file
+inside @ex5@ package to help you understand the working. So it looks like this lab guide is of now use now ;-)
+
+h3. Ordering of injecting dependencies
+
+Start by reading the **README.txt** file from @ex6@ package to understand the concept. **Slide no. 96** refers to the example in @ex6@ package. Run the test class as usual.
+
+h3. Generics support in DI
+
+Start by reading the **README.txt** file from @ex7@ package to understand the concept. **Slide no. 97-98** refers to the example in @ex7@ package. Run the test class as usual.
+
+h3. Lazily injecting dependencies
+
+Start by reading the **README.txt** file from @ex8@ package to understand the concept. **Slide no. 99** refers to the example in @ex8@ package. Run the test class as usual.
+
+
+h1. Conclusion
+
+In this very important lab, we saw lot's of new features introduced in Spring framework. In the next lab, we will cover lifecycle and other core concepts.

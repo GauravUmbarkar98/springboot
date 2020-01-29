@@ -1,0 +1,26 @@
+<ehcache>
+
+	<diskStore path="java.io.tmpdir" />
+	
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToLiveSeconds="120"
+		overflowToDisk="true"
+		timeToIdleSeconds="60"
+	/>
+	
+	<cache name="com.majrul.caching.Flight"
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToLiveSeconds="15"
+	/>
+
+	<cache name="region1"
+		maxElementsInMemory="1000"
+		eternal="false"
+		timeToLiveSeconds="300"
+	/>
+
+
+</ehcache>

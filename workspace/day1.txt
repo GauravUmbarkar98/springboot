@@ -1,0 +1,129 @@
+why   what   how
+
+
+Hibernate
+-----------
+			DATABASE (DL)
+			  |
+			 ORM
+			  |
++------------------------EAR
+|			(MIDDLE LEVEL LOGIC/BL)
+|
+client
+
+		is a framework
+			|
+		semi developed application
+
+		ORM
+
+	Object  <-> relational <---> mapping
+	|		|
+java object		database table
+|			|
+pojo			create table person
+|				|PK
+Person				pid	gender	age	name
+   |				1	F	20	Rita
+----------------------
+|	|	|			create table student
+gender	age	name			|FK
+char    int 	String			pid	std	div	rollno				
+					1	X	A	10
+	setters/getters				
+
+					create table report
+Person p = new Person();		|	<----rtp1---------------------------->
+p.setGender('F');			rollno	m1	m2	m3	.....
+p.setAge(20);					
+p.setName("Rita");
+
+1.object serialization
+2.jdbc 
+
+	Person
+	|isA
+-------------------
+|
+Student
+| ReportCard rpt1 = new ReportCard(); //hasA
+std
+div
+rollno
+
+class ReportCard
+{
+
+	m1,m2,m3  - hasA
+	total
+	avg
+	grade
+}
+
+
+
+Student s = new Student();
+s.setGender('F');
+s.setAge(20);
+s.setName("Rita");
+s.setStd("X");
+s.setDiv('A');
+s.setRollNo(10);
+
+
+
+
+
+
+
+
+
+
+
+
+		Machine
+		|
+		|"isA"
+		|
+		SwipeMachine	
+		| CardReader card = new CardReader(); //hasA
+		|		
+		|		"usesA"
+		|		|
+		Bill	swipe(Card c)
+		|
+	"producesA"
+
+
+
+
+		Core Java App	
+		|
+	----------------------------------------------------
+	|	|	|			|	|
+	Pojo	|	hibernate.cfg.xml	ORM	MySQL
+	|	|
+	|	Test
+	|
+Pojo.hbm.xml
+
+http://10.236.20.229:8080/Test/myworkspace.zip
+
+
+
+		JPA
+		| javax.persistence.Entity;
+	----------------------
+	|		|
+	HIBERNATE	TOPLINK
+	|		|
+	Entity		Entity
+	org.hibernate.
+	annotations.
+	GenericGenerator;
+
+
+
+
+

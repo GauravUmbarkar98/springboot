@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="org.hibernate.tutorial.domain">
+
+    <class name="CreditCard" table="CreditCard_TBL">
+        <id name="cardNumber" column="cardNumber">
+            <generator class="native"/>
+        </id>
+        <property name="cardHolderName"/>
+        
+        <set name="trans"> 
+        	<key column="cardNumber_fk"></key>
+        	<one-to-many class="CreditCardTransaction"/>
+        </set>
+    </class>
+
+ 	<class name="CreditCardTransaction" table="CreditCardTrans_TBL">
+        <id name="transactionNumber" column="transid">
+            <generator class="native"/>
+        </id>
+        <property name="amount"/>
+        <many-to-one name="card" column="cardNumber_fk"/>
+        
+    </class>
+    
+    
+</hibernate-mapping>

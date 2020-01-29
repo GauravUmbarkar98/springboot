@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emailer" class="ex4.EmailBean">
+		<property name="blackList">
+			<list>
+				<value>black@list.org</value>
+				<value>white@list.org</value>
+				<value>john@doe.org</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="blackListListener" class="ex4.BlackListNotifier">
+		<property name="notificationAddress" value="spam@list.org" />
+	</bean>
+
+	<bean id="cxtClosedListener" class="ex4.ContextClosedListener" />
+
+</beans>

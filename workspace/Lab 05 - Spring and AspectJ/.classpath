@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/common-dependencies/hsqldb.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/aspectj-1.8.0.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-dependencies/aspectjweaver-1.8.0.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-aop-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-beans-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-context-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-core-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-expression-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-jdbc-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-test-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/Lab 00 - Libraries/spring-jars/spring-tx-4.1.2.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

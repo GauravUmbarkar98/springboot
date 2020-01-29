@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-access="property">
+   <class name="com.vishal.dto.UserDetails" table="UserDetails">
+	   	<!-- 
+	   			id tag is used for mapping a primary key column of the table.
+	   			For composite primary key, we have composite id tag 
+	   	-->
+	    <id name="userId" type="int">
+      	<column name="id" not-null="true" />
+      	  <!-- If we are going to assign the primary key on our own,
+      	  		either we can skip this element or we can provide the name
+      	  		of our own class which implements the IdentifierGenerator interface
+      	   -->
+         <generator class="increment"/>
+			<!--  
+			<generator class="sequence">
+				<param name="sequence">cd_seq</param>
+			</generator>
+			-->
+      </id>
+
+	<property name="userName" />
+	<property name="address" />
+	<property name="joinedDate" type="date"/>
+	
+	<property name="description" />
+   </class>
+</hibernate-mapping>

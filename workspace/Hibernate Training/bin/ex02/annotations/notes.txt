@@ -1,0 +1,16 @@
+Lab 01. Example 2
+=================
+
+In this example, i am using annotations for mapping the CD class to the table in the database.
+Advantage of annotation is that there is no need of a separate configuration file required.
+
+To understand the working of this example,
+1) Start by reviewing the CD.java entity.
+3) Next you will find the entry of the CD class done in the hibernate.cfg.xml file. If you
+	recollect, in the previous example we did the mapping of CD.hbm.xml in the .cfg file and
+	this time we are directly providing the name of the CD class in the .cfg file since
+	we are using annotation.
+5) It's time to run the CDTest.java again. The output will be same as the last example, an insert
+	query will appear on console log at the end.
+	
+	

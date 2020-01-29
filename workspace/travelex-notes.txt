@@ -1,0 +1,17 @@
+item	<-----m2m---->	categories
+|			|
+--------------		------------------
+itemid,			category_id,item_id
+	|
+	item_id"
+	|
+	bids
+	|
+----------------
+bidid,	amount
+	|
+	customer_id
+	|
+	Customer
+		|
+		id,name

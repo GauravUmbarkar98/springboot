@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="db-config.xml" />
+
+	<bean id="flightRepo" class="xml.FlightRepositoryImpl2">
+		<!--  TODO 6: Refer slide no. 26 to inject the DataSource as a constructor argument-->
+		<constructor-arg ref="ds"/>
+	</bean>
+	  	
+</beans>
+

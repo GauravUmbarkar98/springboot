@@ -1,0 +1,1 @@
+java -cp WebContent/WEB-INF/lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:c:/temp/secdb --dbname.0 secdb

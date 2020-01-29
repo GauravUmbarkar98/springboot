@@ -1,0 +1,13 @@
+Lab 02. Example on Composite Primary Key
+========================================
+
+In this example, we will test the working of an entity which contains a composite primary key.
+Inside the Person class of this example, you will find that we have defined the composite
+primary key of the entity as a separate class by the name Id. I wrote it as an inner class,
+but it can be a separate class also no problem.
+
+To understand the working of this example,
+1) Review the Person class to see if you are clear with the code structure.
+2) In Person.hbm.xml file, you will find the mapping for the composite primary key,
+	the name of the tag is composite-id.
+3) PersonTest class is for testing the working of this example.

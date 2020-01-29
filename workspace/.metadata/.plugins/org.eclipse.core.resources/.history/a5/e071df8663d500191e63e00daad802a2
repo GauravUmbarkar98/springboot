@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/jdbc
+           http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/css/**" filters="none" />
+		<intercept-url pattern="/login.jsp*" filters="none" />
+		<intercept-url pattern="/index.jsp*" filters="none" />
+		<intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />
+		<form-login login-page='/login.jsp' authentication-failure-url="/login.jsp?error=true" default-target-url="/welcome.jsp" always-use-default-target="false"/>
+		<logout logout-success-url="/index.jsp" />
+		<!-- Remember me implementation based on, http://jaspan.com/improved_persistent_login_cookie_best_practice -->
+		<!-- Remember me cookie content:
+				base64(username + ":" + expirationTime + ":" +
+				md5Hex(username + ":" + expirationTime + ":" password + ":" + key))
+		 -->
+		<remember-me key="mykey" />
+	</http>
+
+	<authentication-manager>
+		
+		<authentication-provider>
+			<user-service>
+				<user name="majrul" password="123" authorities="ROLE_USER, ROLE_ADMIN" />
+				<user name="scott" password="tiger" authorities="ROLE_USER" />
+			</user-service>
+			<!-- <user-service properties="/WEB-INF/users.properties" />  -->
+			<!-- For ex: the structure of users.properties will look like this:
+				  majrul=123,ROLE_USER, ROLE_ADMIN
+				  scott=tiger,ROLE_USER -->
+			<!-- 
+			<jdbc-user-service data-source-ref="myDataSource" 
+				users-by-username-query="select username, password, enabled from users where username = ?"
+				authorities-by-username-query="select username, authority from authorities where username = ?" />
+			 -->
+			<!-- 				  
+			<ldap-user-service 
+				user-search-base="ou=people" 
+				user-search-filter="(uid={0})" 
+				group-search-base="ou=groups" 
+				group-search-filter="(uniqueMember={0})"
+				role-prefix="ROLE_" />
+			 -->
+		</authentication-provider>
+	
+	</authentication-manager>
+	
+	<!-- Using an Embedded LDAP Server -->
+	<ldap-server root="dc=training,dc=org" />
+
+	<!-- Database Setup for Storing User credentials in a table -->
+	<beans:bean id="myDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<beans:property name="username" value="scott" />
+		<beans:property name="password" value="tiger" />
+	</beans:bean>
+
+	<jdbc:initialize-database data-source="myDataSource" ignore-failures="ALL">
+		<jdbc:script location="/WEB-INF/script.sql" />
+	</jdbc:initialize-database>
+
+	<!-- Enabling Security for Business Methods -->	
+	<global-method-security secured-annotations="enabled">
+		<!-- <protect-pointcut access="ROLE_ADMIN" expression="execution(* service.UserService.*(..))"/>  -->
+	</global-method-security>
+	
+	<context:component-scan base-package="service" />
+	
+	
+</beans:beans>

@@ -1,0 +1,13 @@
+Lab 02. Example on Natural Id
+=============================
+
+In this example, we will discuss about what is the concept of natural id in Hibernate.
+The concept of natural id is linked with the concept of hashcode and equals in Java.
+
+To understand the working of this example,
+1) Review the Book class and it's configuration.
+2) In Book.hbm.xml file you will find the mapping of the natural-id tag.
+3) BookTest class is for testing the working of this example.
+
+Most of the things i will be discussing in the session with regards to the working of
+the example.
